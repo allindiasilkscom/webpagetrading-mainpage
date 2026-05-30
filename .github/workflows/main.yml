@@ -2,7 +2,8 @@ name: Deploy Angular to S3
 
 on:
   push:
-    branches: [main, master]
+    branches:
+      - allindiasilkscom-patch-1
 
 jobs:
   deploy:
