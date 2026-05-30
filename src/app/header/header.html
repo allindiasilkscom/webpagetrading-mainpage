@@ -1,0 +1,42 @@
+<header class="main-header">
+  <div class="header-container">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="/">
+        <span class="logo-icon">📈</span>
+        <span class="logo-text">WebPageTrading</span>
+      </a>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
+      <ul>
+        <li *ngFor="let item of menuItems">
+          <a href="#">{{ item }}</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- CTA Button -->
+    <div class="cta-button">
+      <button class="btn-primary">Get Started</button>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" (click)="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav" [class.open]="isMobileMenuOpen">
+    <ul>
+      <li *ngFor="let item of menuItems">
+        <a href="#" (click)="toggleMobileMenu()">{{ item }}</a>
+      </li>
+      <li><button class="btn-primary mobile-cta">Get Started</button></li>
+    </ul>
+  </nav>
+</header>   
