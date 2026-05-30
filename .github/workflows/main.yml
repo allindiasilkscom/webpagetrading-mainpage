@@ -30,11 +30,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Debug - List S3 bucket (optional)
-        run: aws s3 ls s3://main-webpagetrading/
-
-      - name: Sync to S3
+      - name: Sync to S3 (without ACL)
         run: |
           aws s3 sync dist/webpagetrading/browser/ s3://main-webpagetrading/ \
-            --delete \
-            --acl public-read
+            --delete
